@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+:root {
+    /* Light Mode */
+    --borderColor: #d0d0d0;
+    --addButtonColor: #0556c6;
+    --deleteButtonColor: #de0a13;
+    --highlitedColor: #b9b9b948;
+    --highliteHoverColor: #d0d0d0;
+    --primaryTextColor: #ffffff;
+    --primaryBackgroundColor: #ffffff;
+    --secondPrimaryBackgroundColor: #ffffff;
+    --primaryShadowColor: #cac9c9;
+    --fontColor: #575e63;
+}
+
+.dark-mode {
+    /* Dark Mode */
+    --primaryBackgroundColor: #121212;
+    --secondPrimaryBackgroundColor: #1b1b1b;
+    /* --addButtonColor: ; */
+    --deleteButtonColor: #b3243e;
+    --backgroundColor: #21323a;
+    --borderColor: #2f2f2f;
+    --fontColor: #ffffff;
+    --highliteHoverColor: #292929;
+}
+
+body {
+    width: 40%;
+    margin: auto;
+    color: var(--fontColor);
+    font-family: 'Cabin', sans-serif;
+    background-color: var(--primaryBackgroundColor);
+}
+
+.shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+/* .section {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+} */
+
+#mode-container {
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0.5px 10px;
+}
+#mode-container #mode {
+    color: var(--primaryTextColor);
+    background-color: #121212;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+#mode-container #mode:hover {
+    cursor: pointer;
+}
+
+#mode-container #mode.active {
+    background-color: white;
+    color: #121212;
+}
+
+#input-form {
+    height: 100px;
+    border-radius: 5px;
+    background-color: var(--secondPrimaryBackgroundColor);
+    margin: 130px 0 30px 0;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+    display: grid;
+    place-items: center;
+}
+#input-form .wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+#input-form .wrapper input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    margin-right: 10px;
+    outline: none;
+    border: 2px solid #cacaca;
+    border-radius: 4px;
+}
+#input-form #add-button {
+    /* height: 26px; */
+    color: white;
+    background-color: var(--addButtonColor);
+    width: 80px;
+    padding: 5px;
+    border: solid var(--addButtonColor);
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+}
+
+#list-container {
+    background-color: var(--secondPrimaryBackgroundColor);
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 0;
+    overflow: hidden;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+}
+#list-container .status {
+    display: flex;
+    justify-content: space-between;
+}
+#list-container .status .counterWrapper {
+    display: flex;
+    padding: 15px;
+}
+#list-container .status .counterWrapper .counter {
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    background-color: #24b349;
+    border-radius: 3px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#list-container .status .counterWrapper .counterNumber {
+    margin: 0;
+    padding: 0;
+}
+#list-container .status .counterWrapper #completedCounter {
+    background-color: #24b349;
+}
+#list-container .status .counterWrapper #uncompletedCounter {
+    background-color: var(--deleteButtonColor);
+}
+#list-container h3 {
+    padding: 15px;
+    margin: 0;
+}
+#list-container ul {
+    padding: 0 0;
+    margin: 0 0;
+}
+#list-container ul li {
+    height: 22px;
+    padding: 10px;
+    list-style: none;
+    cursor: pointer;
+    border-top: 2px solid var(--borderColor);
+}
+#list-container ul li:hover {
+    background-color: var(--highliteHoverColor);
+}
+#list-container ul li #checkbox {
+    float: left;
+}
+#list-container ul li #list-text {
+    float: left;
+    padding: 0;
+    margin: 0 0 0 5px;
+    font-size: 16px;
+}
+#list-container ul li #del-btn {
+    float: right;
+    color: var(--primaryTextColor);
+    background-color: var(--deleteButtonColor);
+    border: solid var(--deleteButtonColor);
+    cursor: pointer;
+    outline-color: var(--deleteButtonColor);
+    border-radius: 4px;
+}

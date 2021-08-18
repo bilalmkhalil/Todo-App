@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/Style.css">
+    <title>FUCO Todo App</title>
+</head>
+<body>
+    <div id="mode-container"><button id="mode">Dark Mode</button></div>
+    <form class="section" id="input-form">
+        <div class="wrapper">
+            <input type="text" id="text-box" placeholder="Type..">
+            <button id="add-button">Add</button>    
+        </div>
+    </form>
+    <div class="section" id="list-container">
+        <div class="status">
+            <h3>Todo</h3>
+            <div class="counterWrapper">
+                <div class="counter" id="completedCounter"><p class="counterNumber" id="cmpltCounter">0</p></div>
+                <div class="counter" id="uncompletedCounter"><p class="counterNumber" id="uncmpltCounter">0</p></div>
+            </div>
+        </div>
+        <ul id="u-list"></ul>
+    </div>
+    <script src="JavaScript/main.js"></script>
+</body>
+</html>
