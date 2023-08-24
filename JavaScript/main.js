@@ -79,32 +79,23 @@ let renderTodoItem = (id, val) => {
     const ul = document.querySelector("#u-list");
         
     const li = document.createElement("li");
-    const checkbox = document.createElement("input");
     const p = document.createElement("p");
-    const button = document.createElement("input");
     const checkMark = document.createElement("i");
     const editButton = document.createElement("i");
     const deleteButton = document.createElement("i");
 
     li.setAttribute("list-id", id);
     li.setAttribute("draggable", "true");
-    // checkbox.setAttribute("id", "checkbox"); 
-    // checkbox.setAttribute("type", "checkbox");
     p.setAttribute("id", "list-text");
     p.innerText = val;
     // p.contentEditable = true;
-    // button.setAttribute("id", "del-btn");
-    // button.setAttribute("type", "button");
-    // button.setAttribute("value", "Delete");
     checkMark.setAttribute("id", "checkbox"); 
     checkMark.setAttribute("class", "fa-regular fa-circle-check ls-action-btns");
     editButton.setAttribute("class", "fa-solid fa-edit ls-action-btns");
     deleteButton.setAttribute("class", "fa-solid fa-trash ls-action-btns");
     deleteButton.setAttribute("id", "del-btn");
+
     li.appendChild(checkMark);
-    // li.appendChild(checkbox);
-    li.appendChild(p);
-    // li.appendChild(button);
     li.appendChild(editButton)
     li.appendChild(deleteButton);
     ul.appendChild(li);

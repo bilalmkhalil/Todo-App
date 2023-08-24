@@ -7,24 +7,124 @@
     <title>FUCO Todo App</title>
 </head>
 <body>
-    <div id="mode-container"><button id="mode">Dark Mode</button></div>
-    <form class="section" id="input-form">
-        <input type="text" id="text-box" placeholder="Type..">
-        <!-- <button id="add-button">Add</button> -->
-        <i class="fa-solid fa-plus" id="add-button"></i>
-        <!-- <div class="wrapper">
-        </div> -->
-    </form>
-    <div class="section" id="list-container">
-        <div class="status">
-            <h3>Todo</h3>
-            <div class="counterWrapper">
-                <div class="counter" id="completedCounter"><p class="counterNumber" id="cmpltCounter">0</p></div>
-                <div class="counter" id="uncompletedCounter"><p class="counterNumber" id="uncmpltCounter">0</p></div>
+
+    <aside>
+        <section id="header">
+            <form class="section" id="search-form">
+                <i class="fa-solid fa-search" id="search-btn"></i>
+                <input type="text" id="text-box" placeholder="Type..">
+            </form>
+        </section>
+        <section id="body">
+            <div class="status">
             </div>
+            <ul id="u-list">
+                <li list-id="444">
+                    <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                    <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                    <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                    <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                </li>
+            </ul>
+        </section>
+        <section id="footer">
+            <form class="section" id="input-form">
+                <input type="text" id="text-box" placeholder="Type..">
+                <i class="fa-solid fa-plus" id="add-button"></i>
+            </form>
+        </section>
+    </aside>
+
+    <main>
+        <div></div>
+        <div id="sub-main">
+            <section id="header">
+                <div></div>
+                <form class="section" id="search-form">
+                    <i class="fa-solid fa-search" id="search-btn"></i>
+                    <input type="text" id="text-box" placeholder="Search todo task..">
+                </form>
+            </section>
+            <section id="body">
+                <div class="section" id="list-container">
+                    <div class="status">
+                        <h3>Todo</h3>
+                        <div class="counterWrapper">
+                            <div class="counter" id="completedCounter"><p class="counterNumber" id="cmpltCounter">0</p></div>
+                            <div class="counter" id="uncompletedCounter"><p class="counterNumber" id="uncmpltCounter">0</p></div>
+                        </div>
+                    </div>
+                    <ul id="u-list">
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        <li list-id="444">
+                            <i id="checkbox" class="fa-regular fa-circle-check ls-action-btns"></i>
+                            <p class="list-text">Lorem. Quisquam, voluptatum.</p>
+                            <i id="edit" class="fa-regular fa-edit ls-action-btns"></i>
+                            <i id="del-btn" class="fa-solid fa-trash ls-action-btns"></i>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </section>
+            <section id="footer">
+                <form class="section" id="input-form">
+                    <input type="text" id="text-box" placeholder="Type..">
+                    <i class="fa-solid fa-plus" id="add-button"></i>
+                </form>
+            </section>
         </div>
-        <ul id="u-list"></ul>
-    </div>
+        <div id="mode-container">
+            <!-- <button id="mode">Dark Mode</button> -->
+            <div class="themes-color">
+                <div class="themes theme-1"></div>
+                <div class="themes theme-2"></div>
+                <div class="themes theme-3"></div>
+                <div class="themes theme-4"></div>
+            </div>
+            <h1 class="theme-text">Themes</h1>
+        </div> 
+    </main>
     <script src="JavaScript/main.js"></script>
 </body>
 </html>
