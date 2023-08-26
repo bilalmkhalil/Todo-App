@@ -109,6 +109,9 @@ let handleClick = (e) => {
     if(target.id === "checkbox") {
         toggleCheck(target);
     }
+    if(target.id === "edit") {
+        editItem(target);
+    }
     if(target.id === "del-btn") {
         deleteItem(target);
     }
@@ -129,6 +132,25 @@ let toggleCheck = (target) => {
     cmpltCounterSize += target.classList.contains("fa-regular") ? -1 : 1;
     uncmpltCounterSize += target.classList.contains("fa-regular") ? 1 : -1;
     updateCounters();
+}
+
+let setCursorAtEnd = (element) => {
+    let range = document.createRange();
+    let selection = window.getSelection();
+    range.selectNodeContents(element);
+    range.collapse(false); // Collapse the range to the end
+    selection.removeAllRanges();
+    selection.addRange(range);
+};
+
+let editItem = (target) => {
+    console.log(target.parentNode.children[1].classList.contains("list-text"));
+    target.parentNode.children[2].classList.toggle("fa-edit");
+    target.parentNode.children[2].classList.toggle("fa-solid");
+    target.parentNode.children[2].classList.toggle("fa-check");
+    target.parentNode.children[1].contentEditable = true;
+    target.parentNode.children[1].focus();
+    setCursorAtEnd(target.parentNode.children[1]);
 }
 
 let deleteItem = (target) => {
