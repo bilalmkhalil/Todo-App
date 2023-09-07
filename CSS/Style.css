@@ -52,16 +52,26 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: grid;
     grid-template-columns: 1.2fr 3.5fr;
     background-color: var(--primaryBackgroundColor);
     font-family: 'Cabin', sans-serif;
 }
 
+.list-text {
+    outline: none;
+}
+
+/* .edit-highlight {
+    border: 2px solid black;
+    outline: red solid 1px;
+} */
+
 /* ===== Side Bar ===== */
 
 aside {
+    height: 100dvh;
     padding: 20px;
     display: grid;
     grid-template-rows: 1fr 12fr 1fr;
@@ -82,7 +92,7 @@ aside section.body .list-container {
     margin-top: 20px;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 65vh;
+    height: 65dvh;
 }
 
 aside section.body .list-container::-webkit-scrollbar {
@@ -113,7 +123,7 @@ aside section.body .todo-list li i {
     font-size: 20px;
 }
 
-aside section.body .todo-list li #edit {
+aside section.body .todo-list li .edit {
     font-size: 20px;
     padding-right: 15px;
 }
@@ -152,7 +162,7 @@ main #sub-main section#body {
 }
 
 main #sub-main section#body #list-container {
-    height: 68vh;
+    height: 68dvh   ;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 0;
@@ -236,13 +246,13 @@ main #sub-main section#body #list-container ul li .ls-action-btns:not(:nth-child
     font-size: 22px;
 }
 
-main #sub-main section#body #list-container ul li #list-text {
+main #sub-main section#body #list-container ul li .list-text {
     padding: 0;
     margin: 0 0 0 5px;
     font-size: 16px;
 }
 
-main #sub-main section#body #list-container ul li #del-btn {
+main #sub-main section#body #list-container ul li .del-btn {
     color: var(--deleteButtonColor);
     cursor: pointer;
     padding: 0 0 0 5px;
@@ -366,7 +376,7 @@ main #sub-main section#footer {
     button {
         height: 50px;
     }
-    #del-btn {
+    .del-btn {
         height: 30px;
     }
     #list-container {
@@ -377,7 +387,7 @@ main #sub-main section#footer {
     #list-container ul li {
         border:  none;
     }
-    #list-container ul li #list-text {
+    #list-container ul li .list-text {
         font-size: 18px;
         font-weight: bold;
     }
