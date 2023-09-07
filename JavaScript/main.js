@@ -20,14 +20,14 @@ section.forEach((el) => { el.classList.add("shadow"); });
 // list of todo
 let todo_list = [];
 
-let toggleDarkMode = () => {
+const toggleDarkMode = () => {
     document.body.classList.toggle("dark-mode");
     mode.innerText = document.body.classList.contains("dark-mode") ? "Light Mode" : "Dark Mode";
     mode.classList.toggle("active");
     section.forEach((el) => { el.classList.toggle("shadow"); });
 }
 
-let addTodo = (e) => {
+const addTodo = (e) => {
     e.preventDefault();
     
     const textBox = document.querySelector("#text-box");
@@ -44,7 +44,7 @@ let addTodo = (e) => {
     }
 }
 
-let renderTodoItem = (id, val) => {
+const renderTodoItem = (id, val) => {
     const ul = document.querySelector("#u-list");
         
     const li = document.createElement("li");
@@ -72,7 +72,7 @@ let renderTodoItem = (id, val) => {
     updateCounters();
 }
 
-let handleClick = (e) => {
+const handleClick = (e) => {
     const target = e.target;
 
     if(target.classList[0] === "checkbox") {
@@ -89,7 +89,7 @@ let handleClick = (e) => {
     }
 }
 
-let toggleCheck = (target) => {
+const toggleCheck = (target) => {
     let editState = target.parentNode.children[2].classList;
     let textState = target.parentNode.children[1];
     let text = target.parentNode.children[1].innerText;
@@ -110,7 +110,7 @@ let toggleCheck = (target) => {
     updateCounters();
 }
 
-let setCursorAtEnd = (element) => {
+const setCursorAtEnd = (element) => {
     let range = document.createRange();
     let selection = window.getSelection();
     range.selectNodeContents(element);
@@ -121,7 +121,7 @@ let setCursorAtEnd = (element) => {
 
 // unfinished
 
-let editItem = (target) => {
+const editItem = (target) => {
     let buttonState = target.parentNode.children[2].classList.contains("fa-edit");
 
     target.parentNode.children[2].classList.toggle("fa-edit");
@@ -150,7 +150,7 @@ let editItem = (target) => {
 //     target.parentNode.children[1].contentEditable = false;
 //  }
 
-let deleteItem = (target) => {
+const deleteItem = (target) => {
     let id = target.parentNode.attributes["list-id"].nodeValue;
     delete todo_list.find((todo) => todo.id === id); 
     // console.log(`{${id} => ${todo_list.find((todo) => todo.id === id)}} Deleted!`)
@@ -161,10 +161,46 @@ let deleteItem = (target) => {
     updateCounters();
 }
 
+// Search
+let searchList = document.querySelector(".search-input-list");
+let searchTask = document.querySelector(".search-input-task");
+let todoList = document.querySelector(".todo-list");
+let todoTask = document.querySelector(".todo-task");
+
+const search = (items, value) => {
+    Array.from(items.children).forEach(todo => {
+        const listText = todo.querySelector('.list-text');
+        if (listText) {
+            const text = listText.textContent.toLowerCase();
+            if (text.includes(value)) {
+                todo.classList.remove('filtered');
+            } else {
+                todo.classList.add('filtered');
+            }
+        }
+    });
+};
+
+
+const searchTodoList = () => {
+    const value = searchList.value.trim().toLowerCase();
+    console.log(value);
+    search(todoList, value);
+}
+
+const searchTodoTask = () => {
+    const value = searchTask.value.trim().toLowerCase();
+    console.log(value);
+    search(todoTask, value); 
+}
+
+
 // Event Listeners
 modeContainer.addEventListener("click", toggleDarkMode);
 addButton.addEventListener("click", addTodo);
 listItems.addEventListener("click", handleClick);
+searchList.addEventListener("keyup", searchTodoList);
+searchTask.addEventListener("keyup", searchTodoTask);
 
 let updateCounters = () => {
     document.querySelector("#cmpltCounter").innerText = cmpltCounterSize;

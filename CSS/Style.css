@@ -63,6 +63,10 @@ body {
     outline: none;
 }
 
+ul > li.filtered {
+    display: none !important;
+}
+
 /* .edit-highlight {
     border: 2px solid black;
     outline: red solid 1px;
